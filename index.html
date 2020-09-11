@@ -15,7 +15,22 @@
 
 <video width="100%" height="100%" controls autoplay preload >
   <source src="Rick_Astley_Never_Gonna_Give_You_Up.ogv" type="video/ogg">
+var $video  = $('video'),
+    $window = $(window); 
 
+$(window).resize(function(){
+    var height = $window.height();
+    $video.css('height', height);
+
+    var videoWidth = $video.width(),
+        windowWidth = $window.width(),
+    marginLeftAdjust =   (windowWidth - videoWidth) / 2;
+
+    $video.css({
+        'height': height, 
+        'marginLeft' : marginLeftAdjust
+    });
+}).resize();
 </video>
 
 
